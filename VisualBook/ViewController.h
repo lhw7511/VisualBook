@@ -11,7 +11,7 @@
 @interface ViewController : UIViewController{
     BookManager *myBook;
 }
-
+-(IBAction)showAllBookAction:(id)sender;
 
 @end
 
