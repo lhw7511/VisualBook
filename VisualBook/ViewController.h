@@ -11,7 +11,14 @@
 @interface ViewController : UIViewController{
     BookManager *myBook;
 }
--(IBAction)showAllBookAction:(id)sender;
 
+@property(nonatomic,strong) IBOutlet UITextView *resultTextView;
+@property(nonatomic,strong) IBOutlet UITextField *nameTextField;
+@property(nonatomic,strong) IBOutlet UITextField *genreTextField;
+@property(nonatomic,strong) IBOutlet UITextField *authorTextField;
+
+-(IBAction)showAllBookAction:(id)sender;
+-(IBAction)addBookAction:(id)sender;
+-(IBAction)textFieldReturn:(id)sender;
 @end
 

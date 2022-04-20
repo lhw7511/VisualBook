@@ -13,6 +13,10 @@
 @end
 
 @implementation ViewController
+@synthesize resultTextView;
+@synthesize nameTextField;
+@synthesize genreTextField;
+@synthesize authorTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +42,19 @@
     [myBook addBook:book3];
 }
 -(IBAction)showAllBookAction:(id)sender{
-    NSLog(@"%@",[myBook showAllBook]);
+    resultTextView.text = [myBook showAllBook];
+}
+-(IBAction)addBookAction:(id)sender{
+    Book * bookTemp =[[Book alloc]init];
+    bookTemp.name = nameTextField.text;
+    bookTemp.genre = genreTextField.text;
+    bookTemp.author = authorTextField.text;
+    
+    [myBook addBook:bookTemp];
+    resultTextView.text = @"등록이 완료되었습니다";
 }
 
+-(IBAction)textFieldReturn:(id)sender{
+    [authorTextField resignFirstResponder];
+}
 @end
