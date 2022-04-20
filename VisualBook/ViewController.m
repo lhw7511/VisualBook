@@ -55,6 +55,16 @@
 }
 
 -(IBAction)textFieldReturn:(id)sender{
+    [nameTextField resignFirstResponder];
+    [genreTextField resignFirstResponder];
     [authorTextField resignFirstResponder];
+}
+-(IBAction)findBookAction:(id)sender{
+    NSString *strTemp = [myBook findBook:nameTextField.text];
+    if(strTemp != nil){
+        resultTextView.text = strTemp;
+    }else{
+        resultTextView.text = @"해당하는 책이 없습니다";
+    }
 }
 @end
