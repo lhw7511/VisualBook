@@ -21,5 +21,6 @@
 -(IBAction)addBookAction:(id)sender;
 -(IBAction)textFieldReturn:(id)sender;
 -(IBAction)findBookAction:(id)sender;
+-(IBAction)removeBookAction:(id)sender;
 @end
 

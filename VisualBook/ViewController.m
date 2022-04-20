@@ -67,4 +67,16 @@
         resultTextView.text = @"해당하는 책이 없습니다";
     }
 }
+-(IBAction)removeBookAction:(id)sender;{
+    NSString *strTemp = [myBook removeBook:nameTextField.text];
+    
+    if(strTemp != nil){
+        NSMutableString *str = [[NSMutableString alloc]init];
+        [str appendString:strTemp];
+        [str appendString:@" 책이 지워졌습니다"];
+        resultTextView.text = str;
+    }else{
+        resultTextView.text = @"해당하는 책이 없습니다";
+    }
+}
 @end
