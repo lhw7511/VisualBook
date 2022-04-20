@@ -17,6 +17,7 @@
 @synthesize nameTextField;
 @synthesize genreTextField;
 @synthesize authorTextField;
+@synthesize countLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +41,9 @@
     [myBook addBook:book1];
     [myBook addBook:book2];
     [myBook addBook:book3];
+    
+    
+    countLabel.text = [NSString stringWithFormat:@"%li",[myBook countBook]];
 }
 -(IBAction)showAllBookAction:(id)sender{
     resultTextView.text = [myBook showAllBook];
@@ -52,6 +56,7 @@
     
     [myBook addBook:bookTemp];
     resultTextView.text = @"등록이 완료되었습니다";
+    countLabel.text = [NSString stringWithFormat:@"%li",[myBook countBook]];
 }
 
 -(IBAction)textFieldReturn:(id)sender{
@@ -78,5 +83,6 @@
     }else{
         resultTextView.text = @"해당하는 책이 없습니다";
     }
+    countLabel.text = [NSString stringWithFormat:@"%li",[myBook countBook]];
 }
 @end
